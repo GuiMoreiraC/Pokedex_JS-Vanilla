@@ -6,13 +6,22 @@ adcButton.addEventListener('click', () => {
 });
 
 popup.addEventListener('click', () => {
-    const classNameOfClickElemente = event.target.classList[0];
-    const className = ['popup-close', 'popup-wrapper', 'popup-link'];
-    const shouldClosePopup = className.some(
-        className => className === classNameOfClickElemente
-    );
+    const classNameOfClickElemente = event.target.classList[0],
+        className = ['popup-close', 'popup-wrapper'],
+        shouldClosePopup = className.some(
+            className => className === classNameOfClickElemente
+        );
 
     if (shouldClosePopup) {
         popup.style.display = 'none';
     }
+});
+
+// Multi select
+
+const selectBtn = document.querySelector('.select-btn'),
+    items = document.querySelectorAll('.item');
+
+selectBtn.addEventListener('click', () => {
+    selectBtn.classList.toggle('open');
 });

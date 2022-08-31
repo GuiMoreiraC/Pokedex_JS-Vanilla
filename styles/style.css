@@ -2,10 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 body{
-background-color: rgb(28, 29, 34);
+  background-color: whitesmoke;
 }
 
 #btn-adc {
@@ -16,28 +17,176 @@ background-color: rgb(28, 29, 34);
   border: 0;
   cursor: pointer;
   padding: 6px 10px;
+  border-radius: 8px;
+
 }
 
 #gallery {
-margin: 0rem 5rem;
-display: flex;
-align-items: center;
-justify-content: center;
-flex-wrap: wrap;
-gap: 1rem;
+  margin: 0rem 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .card {
-margin: 2rem 0rem;
-display: flex;
-justify-content: center;
-gap: 2px;
+  width: 25em;
+  margin: 2rem 0rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2px;
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
+.card .container{
+  margin: 1rem 2rem;
+}
+
+.card .container h2, .card .container p{
+  margin-bottom: 1rem;
+
+}
 
 img{
-height: 450px;
-width: 450px;
-background-size: cover;
-background-position: center;
+  /* height: 450px;
+  width: 450px; */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Popup */
+
+.popup-wrapper {
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+}
+
+.popup {
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  margin: 10% auto;
+  padding: 20px;
+  background: whitesmoke;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+
+
+}
+
+.btn-submit{
+  display: block;
+  margin: 20px auto;
+  background: crimson;
+  color: white;
+  border: 0;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 8px;
+
+
+}
+
+.popup-close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+
+}
+
+input[type=text], textarea{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border-style: none;
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+input[type=text] {
+  height: 50px;
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+/* Multi select - Dropdown */
+
+.multi-select{
+  position: relative;
+  max-width: 320px;
+  width: 100%;
+}
+
+/* li input {
+opacity: 0;
+width: 0;
+height: 0;
+} */
+
+.select-btn{
+  display: flex;
+  height: 50px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.select-btn .btn-text{
+  font-size: 17px;
+  font-weight: 400;
+  color: #333;
+}
+.select-btn .arrow-dwn{
+  display: flex;
+  height: 21px;
+  width: 21px;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 50%;
+  background: crimson;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+.select-btn.open .arrow-dwn{
+  transform: rotate(-180deg);
+}
+.list-types{
+  position: relative;
+  margin-top: 15px;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+.select-btn.open ~ .list-types{
+  display: block;
+}
+.list-types .item{
+  display: flex;
+  align-items: center;
+  list-style: none;
+  cursor: pointer;
+  transition: 0.5s;
+  padding: 0 15px;
 }

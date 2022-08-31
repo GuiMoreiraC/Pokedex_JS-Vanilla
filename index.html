@@ -8,27 +8,66 @@
             content="width=device-width, initial-scale=1.0"
         />
         <link rel="stylesheet" href="styles/style.css" />
-        <link rel="stylesheet" href="styles/popup.css" />
-        <link rel="stylesheet" href="styles/cards.css" />
         <title>Checkpoint</title>
     </head>
     <body>
-        <button id="btn-adc">Adc card</button>
+        <button id="btn-adc">Adicionar card</button>
 
         <div class="popup-wrapper">
             <div class="popup">
                 <div class="popup-close">x</div>
                 <div class="popup-content">
-                    <h2>Cadastro</h2>
+                    <h2>Novo Pokemon</h2>
                     <form id="adc-poke-form" class="form">
-                        <label for="url-img">Url da imagem:</label><br />
+                        <!-- <label for="url-img">Url da imagem:</label> -->
                         <input
                             type="text"
                             id="url-img"
                             name="url-img"
-                        /><br />
-                        <label for="name">Nome:</label><br />
-                        <input type="text" id="name" name="name" /><br />
+                            placeholder="URL da imagem"
+                        />
+                        <!-- <label for="name">Nome:</label> -->
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Nome do pokemon"
+                        />
+                        <textarea
+                            name="descricao"
+                            placeholder="Descrição"
+                        ></textarea>
+                        <div class="multi-select">
+                            <div class="select-btn">
+                                <span class="btn-text"
+                                    >Selecione o tipo</span
+                                >
+                                <span class="arrow-dwn">
+                                    <i
+                                        class="fa-solid fa-chevron-down"
+                                    ></i>
+                                </span>
+                            </div>
+
+                            <ul class="list-types">
+                                <li class="item">
+                                    <input type="checkbox" value="Grass" />
+                                    <span class="item-text">Grass</span>
+                                </li>
+                                <li class="item">
+                                    <input type="checkbox" value="Fire" />
+                                    <span class="item-text">Fire</span>
+                                </li>
+                                <li class="item">
+                                    <input type="checkbox" value="Water" />
+                                    <span class="item-text">Water</span>
+                                </li>
+                                <li class="item">
+                                    <input type="checkbox" value="Bug" />
+                                    <span class="item-text">Bug</span>
+                                </li>
+                            </ul>
+                        </div>
                         <input
                             class="btn-submit"
                             type="button"

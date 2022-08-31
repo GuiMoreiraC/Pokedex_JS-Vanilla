@@ -1,15 +1,15 @@
 const btnSubmit = document.querySelector('.btn-submit'),
-    pokeForm = document.forms['adc-poke-form'],
     pokeCards = [];
 
-function adcPokemonCard(urlImg, nome, desc, custom) {
+function adcPokemonCard(urlImg, nome, desc, tipo) {
     pokeCards.push(elements());
     function elements() {
         return {
             urlImg: urlImg,
             nome: nome,
             desc: desc,
-            custom: custom,
+            tipo: tipo,
+            // custom: custom,
         };
     }
 }
@@ -17,26 +17,47 @@ function adcPokemonCard(urlImg, nome, desc, custom) {
 function atualizarGallery() {
     let divGallery = document.querySelector('#gallery');
     let template = '';
+
     for (const i in pokeCards) {
+        let templateTipo = '';
+
+        for (const index in pokeCards[i].tipo) {
+            templateTipo = `
+            <span>${pokeCards[i].tipo[index]}</span>
+            `;
+        }
+
         template += `
         <div class="card">
-            
-            <img src="${pokeCards[0].urlImg}" alt="Avatar" style="width:100%">
+            <img
+                src="${pokeCards[i].urlImg}"
+                alt="${pokeCards[i].nome}"
+            />
             <div class="container">
-                <h4><b>${pokeCards[0].nome}</b></h4>
-                <p>${pokeCards[0].desc}</p>
+                <h2>${pokeCards[i].nome}</h2>
+                <p>${pokeCards[i].desc}</p>
+                <div class="type">${templateTipo}</div>
             </div>
         </div>
-            `;
+        `;
     }
     divGallery.innerHTML = template;
 }
 
 btnSubmit.onclick = function () {
+    const pokeForm = document.forms['adc-poke-form'],
+        inputTipos = document.querySelectorAll('.list-types li input');
+    let tipo = [];
+    for (const i in inputTipos) {
+        if (inputTipos[i].checked) {
+            tipo.push(inputTipos[i].value);
+        }
+    }
     adcPokemonCard(
         pokeForm['url-img'].value,
         pokeForm['name'].value,
-        'test_Desc'
+        pokeForm['descricao'].value,
+        tipo
     );
     atualizarGallery();
 };
