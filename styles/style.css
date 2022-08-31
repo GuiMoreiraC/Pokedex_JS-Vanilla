@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+background-color: rgb(28, 29, 34);
+}
+
+#btn-adc {
+  display: block;
+  margin: 20px auto;
+  background: crimson;
+  color: white;
+  border: 0;
+  cursor: pointer;
+  padding: 6px 10px;
+}
+
+#gallery {
+margin: 0rem 5rem;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-wrap: wrap;
+gap: 1rem;
+}
+
+.card {
+margin: 2rem 0rem;
+display: flex;
+justify-content: center;
+gap: 2px;
+}
+
+
+img{
+height: 450px;
+width: 450px;
+background-size: cover;
+background-position: center;
+}
